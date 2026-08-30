@@ -2,1368 +2,923 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050606">
-<title>Rassan | أسلوبك. هويتك. تميزك.</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#050707">
+<title>RASSAN — أسلوبك. هويتك. تميزك.</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
 
 :root{
-  --cyan:#08d7e9;
-  --bg:#050606;
-  --card:#111414;
-  --line:#272d2e;
-  --muted:#999;
-  --white:#fff;
+ --cyan:#09dff2;
+ --bg:#050707;
+ --panel:#0d1111;
+ --line:#252c2d;
+ --text:#f5f7f7;
+ --muted:#90999a;
+ --danger:#ff5967;
+ --ok:#36dfa0;
 }
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 
 body{
-  background:
-    radial-gradient(circle at 10% 20%,rgba(8,215,233,.08),transparent 25%),
-    var(--bg);
-  color:var(--white);
-  font-family:Cairo,Arial,sans-serif;
+ background:
+ radial-gradient(circle at 50% -10%,#0ad9ed18,transparent 34%),
+ var(--bg);
+ color:var(--text);
+ font-family:Cairo,Arial,sans-serif;
 }
 
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-button,input,textarea{
-  font-family:inherit;
-}
-
-button{
-  cursor:pointer;
-}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
 
 .container{
-  width:min(1170px,calc(100% - 30px));
-  margin:auto;
+ width:min(1180px,calc(100% - 26px));
+ margin:auto;
 }
 
-/* ================= HEADER ================= */
-
+/* NAVBAR */
 header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(5,6,6,.92);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid #1d2223;
+ position:sticky;
+ top:0;
+ z-index:1000;
+ background:#050707ef;
+ backdrop-filter:blur(18px);
+ border-bottom:1px solid #202727;
 }
 
 .nav{
-  height:74px;
-  display:flex;
-  align-items:center;
-  gap:25px;
+ height:72px;
+ display:flex;
+ align-items:center;
+ gap:18px;
+}
+
+.brand{
+ display:flex;
+ align-items:center;
+ gap:10px;
+ font-size:25px;
+ font-weight:900;
+ margin-left:auto;
 }
 
 .logo{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  font-size:27px;
-  font-weight:900;
-  margin-left:auto;
-}
-
-.logo-mark{
-  width:45px;
-  height:45px;
-  background:var(--cyan);
-  border-radius:12px 25px 12px 25px;
-  position:relative;
-}
-
-.logo-mark:after{
-  content:"";
-  position:absolute;
-  width:20px;
-  height:9px;
-  background:var(--cyan);
-  right:-9px;
-  top:19px;
-  border-radius:0 8px 8px 0;
+ width:43px;
+ height:43px;
+ object-fit:contain;
+ border-radius:10px;
 }
 
 .links{
-  display:flex;
-  gap:30px;
-  margin:auto;
+ display:flex;
+ gap:28px;
+ margin:auto;
 }
 
 .links a{
-  font-size:14px;
-  font-weight:800;
-  color:#ddd;
-  padding:25px 0;
-  border-bottom:2px solid transparent;
+ font-size:13px;
+ font-weight:800;
+ color:#d9dddd;
+ padding:25px 0;
+ border-bottom:2px solid transparent;
 }
 
-.links a:hover,
-.links a.active{
-  color:var(--cyan);
-  border-color:var(--cyan);
+.links a:hover{
+ color:var(--cyan);
+ border-color:var(--cyan);
 }
 
 .actions{
-  display:flex;
-  align-items:center;
-  gap:8px;
+ display:flex;
+ gap:7px;
 }
 
-.action,
-.baliza{
-  height:42px;
-  border-radius:11px;
-  background:#0d0f0f;
-  border:1px solid var(--line);
-  color:white;
+.icon,.balizaBtn{
+ height:41px;
+ border:1px solid var(--line);
+ background:#0a0e0e;
+ color:#fff;
+ border-radius:10px;
 }
 
-.action{
-  min-width:42px;
+.icon{min-width:41px}
+
+.balizaBtn{
+ padding:0 14px;
+ border-color:#087d89;
+ color:var(--cyan);
+ font-weight:900;
 }
 
-.baliza{
-  padding:0 15px;
-  color:var(--cyan);
-  border-color:#087d89;
-  font-weight:800;
-}
-
-.count{
-  background:var(--cyan);
-  color:#001014;
-  border-radius:50px;
-  padding:1px 6px;
-  font-size:11px;
-}
-
-/* ================= HERO ================= */
-
+/* HERO */
 .hero{
-  min-height:430px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  background:
-    radial-gradient(circle at 20% 50%,rgba(8,215,233,.15),transparent 30%),
-    linear-gradient(100deg,#090b0b,#171b1c 55%,#070808);
+ min-height:490px;
+ position:relative;
+ overflow:hidden;
+ background:linear-gradient(110deg,#040606,#111919 55%,#050707);
 }
 
-.hero-copy{
-  padding:75px 20px 60px 35px;
+.hero:before{
+ content:"";
+ position:absolute;
+ inset:0;
+ background:
+ radial-gradient(circle at 72% 48%,#00e5ff23,transparent 30%),
+ linear-gradient(90deg,#0009,transparent 60%);
 }
+
+.heroInner{
+ min-height:490px;
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ align-items:center;
+ position:relative;
+ z-index:2;
+}
+
+.heroText{padding:40px 10px}
 
 .kicker{
-  color:var(--cyan);
-  font-size:21px;
-  font-weight:800;
+ color:var(--cyan);
+ font-weight:900;
+ font-size:20px;
 }
 
 .hero h1{
-  font-size:65px;
-  line-height:1;
-  margin:10px 0;
-  font-weight:900;
+ font-size:68px;
+ line-height:1;
+ margin:9px 0 3px;
+ letter-spacing:1px;
 }
 
-.tagline{
-  font-size:25px;
-  font-weight:800;
-}
+.hero h2{font-size:26px}
 
 .hero p{
-  max-width:530px;
-  color:#bbb;
-  line-height:2;
-  margin:18px 0 25px;
+ color:#b7bebe;
+ line-height:2;
+ margin:17px 0 25px;
+ max-width:530px;
 }
 
-.buttons{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.primary,
-.secondary{
-  padding:12px 25px;
-  border-radius:9px;
-  font-weight:900;
+.btn{
+ border:1px solid var(--cyan);
+ border-radius:9px;
+ padding:11px 23px;
+ font-weight:900;
+ display:inline-block;
 }
 
 .primary{
-  background:var(--cyan);
-  color:#001014;
-  border:1px solid var(--cyan);
+ background:var(--cyan);
+ color:#001114;
 }
 
-.secondary{
-  background:transparent;
-  color:white;
-  border:1px solid #087d89;
+.outline{
+ color:var(--cyan);
+ background:transparent;
+ margin-right:7px;
 }
 
-.hero-art{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
+.heroVisual{
+ height:430px;
+ position:relative;
+ display:grid;
+ place-items:center;
 }
 
-.hoodie{
-  width:300px;
-  height:350px;
-  position:relative;
-  filter:drop-shadow(0 25px 35px #000);
+.logoGlow{
+ width:300px;
+ height:300px;
+ object-fit:contain;
+ filter:
+ drop-shadow(0 0 22px #08e5f2aa)
+ drop-shadow(0 28px 40px #000);
+ animation:float 4s ease-in-out infinite;
 }
 
-.hoodie:before{
-  content:"";
-  position:absolute;
-  inset:20px;
-  background:linear-gradient(145deg,#191919,#050505);
-  clip-path:polygon(
-    35% 0,
-    65% 0,
-    74% 11%,
-    100% 27%,
-    88% 43%,
-    76% 34%,
-    78% 100%,
-    22% 100%,
-    24% 34%,
-    12% 43%,
-    0 27%,
-    26% 11%
-  );
-  border-radius:30px;
+.glowFloor{
+ position:absolute;
+ bottom:45px;
+ width:390px;
+ height:80px;
+ border-radius:50%;
+ background:#00dff41b;
+ filter:blur(22px);
 }
 
-.hoodie:after{
-  content:"Rassan";
-  position:absolute;
-  top:165px;
-  left:0;
-  right:0;
-  text-align:center;
-  font-size:32px;
-  font-weight:900;
+@keyframes float{
+ 50%{transform:translateY(-10px)}
 }
 
-.hero-r{
-  position:absolute;
-  top:215px;
-  color:var(--cyan);
-  font-size:55px;
-  font-weight:900;
-  z-index:2;
-}
-
-/* ================= SECTIONS ================= */
-
-section{
-  padding:55px 0;
-}
-
-.section-title{
-  display:flex;
-  align-items:center;
-  gap:11px;
-  margin-bottom:23px;
-}
-
-.section-title:before{
-  content:"";
-  width:4px;
-  height:27px;
-  background:var(--cyan);
-  border-radius:5px;
-}
-
-.section-title h2{
-  font-size:24px;
-}
-
-/* ================= CATEGORIES ================= */
-
-.categories{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-  margin-bottom:35px;
-}
-
-.category{
-  background:#090a0a;
-  color:#eee;
-  border:1px solid var(--line);
-  border-radius:12px;
-  padding:15px;
-  font-weight:800;
-}
-
-.category:hover,
-.category.active{
-  color:var(--cyan);
-  border-color:var(--cyan);
-}
-
-/* ================= PRODUCTS ================= */
-
-.products{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:14px;
-}
-
-.product{
-  background:var(--card);
-  border:1px solid #272c2d;
-  border-radius:13px;
-  overflow:hidden;
-  position:relative;
-  transition:.25s;
-}
-
-.product:hover{
-  transform:translateY(-5px);
-  border-color:#087d89;
-}
-
-.product-image{
-  height:225px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:
-    radial-gradient(circle at 50% 35%,#343838,#151717);
-}
-
-.product-image svg{
-  width:90%;
-  height:90%;
-}
-
-.badge{
-  position:absolute;
-  top:10px;
-  left:10px;
-  background:var(--cyan);
-  color:#001014;
-  padding:3px 10px;
-  border-radius:50px;
-  font-size:11px;
-  font-weight:900;
-}
-
-.heart{
-  position:absolute;
-  top:10px;
-  right:10px;
-  width:35px;
-  height:35px;
-  border-radius:50%;
-  border:1px solid #333;
-  background:#111b;
-  color:white;
-  font-size:20px;
-}
-
-.heart.active{
-  color:var(--cyan);
-}
-
-.product-info{
-  padding:13px;
-}
-
-.product-info h3{
-  font-size:14px;
-  margin-bottom:3px;
-}
-
-.product-info p{
-  color:var(--muted);
-  font-size:12px;
-  margin-bottom:5px;
-}
-
-.price{
-  display:block;
-  color:var(--cyan);
-  font-size:16px;
-  margin-bottom:10px;
-}
-
-.add{
-  width:100%;
-  border:1px solid var(--cyan);
-  background:transparent;
-  color:var(--cyan);
-  border-radius:8px;
-  padding:9px;
-  font-weight:800;
-}
-
-.add:hover{
-  background:var(--cyan);
-  color:#001014;
-}
-
-/* ================= FEATURES ================= */
-
-.features{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  background:#0d0f0f;
-  border:1px solid #202526;
-  border-radius:14px;
-  overflow:hidden;
+/* FEATURES */
+.featureBar{
+ margin-top:9px;
+ background:#0d1111;
+ border:1px solid var(--line);
+ border-radius:13px;
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ overflow:hidden;
 }
 
 .feature{
-  text-align:center;
-  padding:25px 12px;
-  border-left:1px solid #252929;
+ padding:20px 12px;
+ text-align:center;
+ border-left:1px solid var(--line);
 }
 
-.feature:last-child{
-  border-left:0;
+.feature:last-child{border-left:0}
+
+.feature .ico{
+ font-size:28px;
+ color:var(--cyan);
 }
 
-.icon{
-  font-size:32px;
-  color:var(--cyan);
-}
-
-.feature h3{
-  margin:7px 0 3px;
-}
-
+.feature h3{font-size:14px}
 .feature p{
-  color:#999;
-  font-size:12px;
-  line-height:1.8;
+ font-size:10px;
+ color:var(--muted);
 }
 
-/* ================= ABOUT ================= */
+/* PRODUCTS */
+section{padding:50px 0}
 
+.title{
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ gap:9px;
+ margin-bottom:22px;
+}
+
+.title:after{
+ content:"";
+ height:2px;
+ width:44px;
+ background:var(--cyan);
+ order:-1;
+}
+
+.title h2{font-size:25px}
+
+.categories{
+ display:flex;
+ justify-content:center;
+ gap:8px;
+ flex-wrap:wrap;
+ margin-bottom:24px;
+}
+
+.cat{
+ background:#090c0c;
+ color:#ddd;
+ border:1px solid var(--line);
+ border-radius:8px;
+ padding:8px 18px;
+ font-weight:800;
+}
+
+.cat.active,.cat:hover{
+ border-color:var(--cyan);
+ color:var(--cyan);
+}
+
+.products{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:13px;
+}
+
+.card{
+ position:relative;
+ background:linear-gradient(180deg,#121717,#0b0e0e);
+ border:1px solid var(--line);
+ border-radius:13px;
+ overflow:hidden;
+ transition:.2s;
+}
+
+.card:hover{
+ transform:translateY(-4px);
+ border-color:#087f8c;
+}
+
+.productImg{
+ height:280px;
+ display:grid;
+ place-items:center;
+ background:radial-gradient(circle,#313737,#121515 70%);
+ overflow:hidden;
+}
+
+.productImg img{
+ width:100%;
+ height:100%;
+ object-fit:cover;
+}
+
+.badge{
+ position:absolute;
+ top:10px;
+ right:10px;
+ background:var(--cyan);
+ color:#001114;
+ border-radius:20px;
+ padding:2px 9px;
+ font-size:10px;
+ font-weight:900;
+ z-index:2;
+}
+
+.badge.sold{
+ background:#555;
+ color:#fff;
+}
+
+.wish{
+ position:absolute;
+ top:9px;
+ left:9px;
+ border:0;
+ background:#0a0d0dcc;
+ color:#fff;
+ width:35px;
+ height:35px;
+ border-radius:50%;
+ font-size:19px;
+ z-index:3;
+}
+
+.wish.on{color:var(--cyan)}
+
+.info{padding:13px}
+
+.info h3{font-size:14px}
+
+.info p{
+ color:var(--muted);
+ font-size:11px;
+ line-height:1.8;
+ min-height:40px;
+}
+
+.price{
+ display:block;
+ color:var(--cyan);
+ font-size:17px;
+ font-weight:900;
+ margin:5px 0 9px;
+}
+
+.add{
+ width:100%;
+ padding:9px;
+ border:1px solid var(--cyan);
+ border-radius:8px;
+ background:transparent;
+ color:var(--cyan);
+ font-weight:900;
+}
+
+.add:hover{
+ background:var(--cyan);
+ color:#001114;
+}
+
+.add:disabled{
+ opacity:.4;
+ cursor:not-allowed;
+}
+
+/* ABOUT */
 .about{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:35px;
-  align-items:center;
-  padding:35px;
-  border:1px solid #222727;
-  border-radius:15px;
-  background:#0d0f0f;
+ display:grid;
+ grid-template-columns:1fr 1.5fr;
+ align-items:center;
+ gap:30px;
+ background:#0c1010;
+ border:1px solid var(--line);
+ border-radius:14px;
+ padding:34px;
 }
 
-.about-logo{
-  text-align:center;
-}
+.aboutVisual{text-align:center}
 
-.about-logo .logo-mark{
-  width:170px;
-  height:170px;
-  margin:auto;
-  transform:scale(.8);
-  box-shadow:0 0 50px rgba(8,215,233,.15);
+.aboutVisual img{
+ width:180px;
+ filter:drop-shadow(0 0 22px #08e5f277);
 }
 
 .about h2{
-  font-size:30px;
-  margin-bottom:12px;
+ font-size:29px;
+ margin-bottom:9px;
 }
 
-.about h2 span{
-  color:var(--cyan);
-}
+.about h2 span{color:var(--cyan)}
 
 .about p{
-  color:#aaa;
-  line-height:2;
-  margin-bottom:20px;
+ color:#aeb6b7;
+ line-height:2;
+ font-size:13px;
 }
 
-/* ================= WHATSAPP ================= */
-
-.whatsapp{
-  margin-top:35px;
-  padding:20px 25px;
-  background:#0d1010;
-  border:1px solid #242929;
-  border-radius:14px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
+/* CONTACT */
+.contact{
+ background:linear-gradient(90deg,#07b8cc,#10d9ea);
+ color:#001114;
+ border-radius:13px;
+ padding:20px 24px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:15px;
 }
 
-.whatsapp small{
-  display:block;
-  color:#999;
-  margin-top:4px;
+.contact small{
+ display:block;
+ font-weight:700;
+ opacity:.8;
 }
 
-.wa-button{
-  background:var(--cyan);
-  color:#001014;
-  border:0;
-  border-radius:9px;
-  padding:12px 22px;
-  font-weight:900;
+.contact .wa{
+ background:#001114;
+ color:#fff;
+ border-color:#001114;
 }
 
-/* ================= FOOTER ================= */
-
+/* FOOTER */
 footer{
-  border-top:1px solid #1b2021;
-  background:#080909;
-  padding:42px 0 20px;
+ border-top:1px solid var(--line);
+ margin-top:20px;
+ padding:38px 0 15px;
+ background:#080a0a;
 }
 
-.footer-grid{
-  display:grid;
-  grid-template-columns:1.5fr 1fr 1fr 1fr;
-  gap:30px;
+.footerGrid{
+ display:grid;
+ grid-template-columns:1.4fr 1fr 1fr 1fr;
+ gap:30px;
 }
 
-footer h3{
-  font-size:15px;
-  margin-bottom:8px;
+.footerGrid h3{
+ font-size:14px;
+ margin-bottom:8px;
+ color:var(--cyan);
 }
 
-footer p,
-footer a{
-  color:#999;
-  font-size:13px;
-  line-height:2;
-  display:block;
-}
-
-footer a:hover{
-  color:var(--cyan);
-}
-
-.social{
-  display:flex;
-  gap:9px;
-  margin-top:10px;
-}
-
-.social a{
-  width:34px;
-  height:34px;
-  border:1px solid #292e2f;
-  border-radius:8px;
-  display:grid;
-  place-items:center;
-  color:var(--cyan);
+.footerGrid p,
+.footerGrid a{
+ color:#8f9899;
+ font-size:11px;
+ line-height:2;
+ display:block;
 }
 
 .copy{
-  text-align:center;
-  border-top:1px solid #1d2122;
-  margin-top:24px;
-  padding-top:16px;
-  color:#777;
-  font-size:12px;
+ border-top:1px solid var(--line);
+ margin-top:22px;
+ padding-top:13px;
+ text-align:center;
+ color:#687172;
+ font-size:10px;
 }
 
-/* ================= FLOATING WHATSAPP ================= */
-
-.float-wa{
-  position:fixed;
-  bottom:20px;
-  left:20px;
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  background:#1bd76b;
-  color:white;
-  display:grid;
-  place-items:center;
-  font-size:28px;
-  z-index:90;
-  box-shadow:0 10px 30px #000;
+/* WHATSAPP */
+.floatWa{
+ position:fixed;
+ left:18px;
+ bottom:18px;
+ width:56px;
+ height:56px;
+ background:#19d96b;
+ color:#fff;
+ border-radius:50%;
+ display:grid;
+ place-items:center;
+ font-size:25px;
+ z-index:900;
+ box-shadow:0 12px 30px #000;
 }
 
-/* ================= MODALS ================= */
-
+/* MODALS */
 .modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:#000b;
-  backdrop-filter:blur(8px);
-  z-index:200;
-  place-items:center;
-  padding:18px;
+ position:fixed;
+ inset:0;
+ z-index:2000;
+ background:#000c;
+ backdrop-filter:blur(9px);
+ display:none;
+ place-items:center;
+ padding:14px;
 }
 
-.modal.show{
-  display:grid;
+.modal.show{display:grid}
+
+.box{
+ width:min(950px,100%);
+ max-height:92vh;
+ overflow:auto;
+ background:#101414;
+ border:1px solid #313939;
+ border-radius:16px;
+ padding:20px;
+ box-shadow:0 25px 80px #000;
 }
 
-.modal-box{
-  width:min(620px,100%);
-  max-height:90vh;
-  overflow:auto;
-  background:#101313;
-  border:1px solid #303536;
-  border-radius:17px;
-  padding:23px;
-}
-
-.modal-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:15px;
+.modalHead{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ margin-bottom:15px;
 }
 
 .close{
-  border:0;
-  background:none;
-  color:#aaa;
-  font-size:28px;
+ background:none;
+ border:0;
+ color:#9ca5a6;
+ font-size:28px;
 }
 
-.modal input,
-.modal textarea{
-  width:100%;
-  background:#080a0a;
-  color:white;
-  border:1px solid #303536;
-  border-radius:8px;
-  padding:11px;
-  margin:7px 0 12px;
-  outline:none;
+.field{margin:8px 0}
+
+.field label{
+ display:block;
+ color:#aeb6b7;
+ font-size:11px;
+ margin-bottom:4px;
 }
 
-.modal input:focus,
-.modal textarea:focus{
-  border-color:var(--cyan);
+.field input,
+.field textarea,
+.field select{
+ width:100%;
+ background:#070909;
+ border:1px solid #303838;
+ color:#fff;
+ border-radius:8px;
+ padding:10px;
+ outline:none;
 }
 
-.two{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
+.field input:focus,
+.field textarea:focus,
+.field select:focus{
+ border-color:var(--cyan);
 }
 
-.order{
-  background:#090b0b;
-  border:1px solid #282d2e;
-  border-radius:10px;
-  padding:12px;
-  margin:8px 0;
-}
-
-.order strong{
-  color:var(--cyan);
+.grid2{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:10px;
 }
 
 .note{
-  color:#999;
-  font-size:12px;
-  line-height:1.8;
+ color:#899394;
+ font-size:10px;
+ line-height:1.9;
+}
+
+.order,
+.manage,
+.log{
+ background:#090c0c;
+ border:1px solid #293030;
+ border-radius:10px;
+ padding:12px;
+ margin:8px 0;
+}
+
+.order strong,
+.manage strong{
+ color:var(--cyan);
+}
+
+.row{
+ display:flex;
+ gap:7px;
+ align-items:center;
+ flex-wrap:wrap;
+}
+
+.smallBtn{
+ border:1px solid #343c3d;
+ background:#0b0f0f;
+ color:#ddd;
+ border-radius:7px;
+ padding:7px 10px;
+ font-size:11px;
+}
+
+.danger{
+ border-color:#63313a;
+ color:#ff8b94;
+ background:#2a1114;
+}
+
+.ok{
+ border-color:#236b54;
+ color:#6af0bb;
+ background:#0b241c;
+}
+
+.stats{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:8px;
+ margin-bottom:13px;
+}
+
+.stat{
+ background:#090c0c;
+ border:1px solid var(--line);
+ border-radius:10px;
+ padding:13px;
+ text-align:center;
+ font-size:11px;
+ color:#9ca5a6;
+}
+
+.stat b{
+ display:block;
+ color:var(--cyan);
+ font-size:23px;
+}
+
+.tabs{
+ display:flex;
+ gap:7px;
+ flex-wrap:wrap;
+ margin-bottom:13px;
+}
+
+.tab{
+ border:1px solid var(--line);
+ background:#090c0c;
+ color:#ddd;
+ border-radius:8px;
+ padding:8px 13px;
+}
+
+.tab.active{
+ color:var(--cyan);
+ border-color:var(--cyan);
 }
 
 .toast{
-  display:none;
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  z-index:300;
-  background:#111;
-  border:1px solid var(--cyan);
-  padding:12px 17px;
-  border-radius:9px;
+ position:fixed;
+ right:15px;
+ bottom:15px;
+ background:#111616;
+ border:1px solid var(--cyan);
+ padding:10px 14px;
+ border-radius:9px;
+ z-index:3000;
+ display:none;
 }
 
-.toast.show{
-  display:block;
-}
+.toast.show{display:block}
 
-/* ================= MOBILE ================= */
-
-@media(max-width:1000px){
-
-  .products{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
+/* MOBILE */
+@media(max-width:900px){
+ .products{grid-template-columns:repeat(2,1fr)}
+ .footerGrid{grid-template-columns:1fr 1fr}
 }
 
 @media(max-width:700px){
+ .links{display:none}
 
-  .container{
-    width:calc(100% - 20px);
-  }
+ .heroInner{
+  grid-template-columns:1fr;
+  text-align:center;
+ }
 
-  .nav{
-    height:64px;
-  }
+ .heroText{padding-top:55px}
 
-  .links{
-    display:none;
-  }
+ .hero h1{font-size:52px}
 
-  .logo{
-    font-size:22px;
-  }
+ .heroVisual{height:310px}
 
-  .logo-mark{
-    width:38px;
-    height:38px;
-  }
+ .logoGlow{
+  width:220px;
+  height:220px;
+ }
 
-  .hero{
-    grid-template-columns:1fr;
-  }
+ .featureBar{
+  grid-template-columns:1fr 1fr;
+ }
 
-  .hero-art{
-    height:280px;
-  }
+ .feature{
+  border-bottom:1px solid var(--line);
+ }
 
-  .hero-copy{
-    padding:20px 8px 45px;
-    text-align:center;
-  }
+ .about{
+  grid-template-columns:1fr;
+  text-align:center;
+ }
 
-  .hero p{
-    margin:15px auto 25px;
-  }
+ .contact{
+  flex-direction:column;
+  text-align:center;
+ }
 
-  .buttons{
-    justify-content:center;
-  }
+ .grid2{
+  grid-template-columns:1fr;
+ }
 
-  .hero h1{
-    font-size:50px;
-  }
-
-  .categories{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .products{
-    grid-template-columns:1fr 1fr;
-    gap:9px;
-  }
-
-  .features{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .feature{
-    border-bottom:1px solid #252929;
-  }
-
-  .about{
-    grid-template-columns:1fr;
-    text-align:center;
-  }
-
-  .whatsapp{
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .two{
-    grid-template-columns:1fr;
-  }
-
+ .stats{
+  grid-template-columns:1fr 1fr;
+ }
 }
 
-@media(max-width:420px){
-
-  .footer-grid{
-    grid-template-columns:1fr;
-  }
-
-  .products{
-    gap:7px;
-  }
-
-  .product-info h3{
-    font-size:12px;
-  }
-
-  .add{
-    font-size:11px;
-  }
-
+@media(max-width:430px){
+ .products{gap:7px}
+ .productImg{height:210px}
+ .info h3{font-size:12px}
+ .footerGrid{grid-template-columns:1fr}
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
-
+<!-- HEADER -->
 <header>
-
 <div class="container nav">
 
-<a href="#home" class="logo">
-<span>Rassan</span>
-<div class="logo-mark"></div>
+<a class="brand" href="#home">
+<span>RASSAN</span>
+<div class="logo" style="
+background:#08dff2;
+border-radius:50%;
+box-shadow:0 0 15px #08dff2;
+"></div>
 </a>
 
 <nav class="links">
-<a class="active" href="#home">الرئيسية</a>
+<a href="#home">الرئيسية</a>
 <a href="#products">المنتجات</a>
 <a href="#about">من نحن</a>
 <a href="#contact">تواصل معنا</a>
 </nav>
 
 <div class="actions">
-
-<button class="action" onclick="openSearch()">
-⌕
-</button>
-
-<button class="action" onclick="openCart()">
-🛒
-<span class="count" id="cartCount">0</span>
-</button>
-
-<button class="baliza" onclick="openBaliza()">
-♙ Baliza
-</button>
-
+<button class="icon" onclick="openSearch()">⌕</button>
+<button class="icon" onclick="openCart()">🛒 <span id="cartCount">0</span></button>
+<button class="balizaBtn" onclick="openBaliza()">♙ Baliza</button>
 </div>
 
 </div>
-
 </header>
 
-
-<!-- ================= HERO ================= -->
-
+<!-- HERO -->
 <main id="home">
 
 <section class="hero">
 
-<div class="hero-copy">
+<div class="container heroInner">
 
-<div class="kicker">
-Rassan
-</div>
+<div class="heroText">
 
-<h1>
-أسلوبك.
-</h1>
+<div class="kicker">مرحبا بك في</div>
 
-<div class="tagline">
-هويتك. تميزك.
-</div>
+<h1>RASSAN</h1>
+
+<h2>أسلوبك. هويتك. تميزك.</h2>
 
 <p>
-Rassan ليست مجرد علامة تجارية، بل هي أسلوب حياة.
-ملابس عصرية بجودة عالية وتصاميم صممت لتعكس شخصيتك
-وتمنحك الثقة في كل خطوة.
+اكتشف مجموعة RASSAN من الملابس العصرية.
+جودة، بساطة وهوية مغربية بتصميم حديث.
 </p>
 
-<div class="buttons">
-
-<a class="primary" href="#products">
-تسوق الآن ↗
+<a class="btn primary" href="#products">
+تسوق الآن
 </a>
 
-<a class="secondary" href="#products">
-استكشف المنتجات
+<a class="btn outline" href="#about">
+اكتشف RASSAN
 </a>
 
 </div>
 
+<div class="heroVisual">
+
+<div class="glowFloor"></div>
+
+<div class="logoGlow" style="
+background:#09dff2;
+border-radius:45% 55% 48% 52%;
+width:250px;
+height:250px;
+box-shadow:0 0 50px #09dff2;
+"></div>
+
 </div>
 
-
-<div class="hero-art">
-
-<div class="hoodie"></div>
-
-<div class="hero-r">
-R
 </div>
-
-</div>
-
 </section>
 
+<!-- FEATURES -->
+<div class="container featureBar">
 
-<!-- ================= PRODUCTS ================= -->
+<div class="feature">
+<div class="ico">♧</div>
+<h3>جودة عالية</h3>
+<p>منتجات مختارة بعناية</p>
+</div>
 
+<div class="feature">
+<div class="ico">▱</div>
+<h3>توصيل سريع</h3>
+<p>توصيل لجميع المدن</p>
+</div>
+
+<div class="feature">
+<div class="ico">♧</div>
+<h3>دعم 24/7</h3>
+<p>نحن هنا لمساعدتك</p>
+</div>
+
+<div class="feature">
+<div class="ico">♙</div>
+<h3>دفع آمن</h3>
+<p>حماية معلوماتك</p>
+</div>
+
+</div>
+
+<!-- PRODUCTS -->
 <section class="container" id="products">
 
-<div class="section-title">
-<h2>تسوق حسب الفئة</h2>
+<div class="title">
+<h2>منتجاتنا</h2>
 </div>
 
 <div class="categories">
 
-<button class="category active"
-onclick="filterProducts('all',this)">
+<button class="cat active"
+onclick="filterProducts('الكل',this)">
 الكل
 </button>
 
-<button class="category"
+<button class="cat"
 onclick="filterProducts('تيشرتات',this)">
 تيشرتات
 </button>
 
-<button class="category"
+<button class="cat"
 onclick="filterProducts('هوديات',this)">
 هوديات
 </button>
 
-<button class="category"
+<button class="cat"
 onclick="filterProducts('سراويل',this)">
 سراويل
 </button>
 
-</div>
-
-
-<div class="section-title">
-<h2>منتجات مميزة</h2>
-</div>
-
-
-<div class="products" id="productsGrid">
-
-
-<!-- PRODUCT 1 -->
-
-<article class="product" data-category="إكسسوارات">
-
-<span class="badge">
-جديد
-</span>
-
-<button class="heart"
-onclick="toggleHeart(this)">
-♡
-</button>
-
-<div class="product-image">
-
-<svg viewBox="0 0 300 300">
-
-<path
-d="M75 150C80 90 125 55 160 55S240 90 245 150H75Z"
-fill="#111"/>
-
-<path
-d="M70 145C125 130 195 130 255 148C245 175 205 180 165 172C125 165 95 170 72 178C55 183 52 157 70 145Z"
-fill="#050505"/>
-
-<text
-x="150"
-y="125"
-text-anchor="middle"
-fill="#08d7e9"
-font-size="34"
-font-weight="900">
-R
-</text>
-
-</svg>
-
-</div>
-
-<div class="product-info">
-
-<h3>
-كاب Rassan
-</h3>
-
-<p>
+<button class="cat"
+onclick="filterProducts('إكسسوارات',this)">
 إكسسوارات
-</p>
-
-<strong class="price">
-99 د.م
-</strong>
-
-<button class="add"
-onclick="addToCart('كاب Rassan','99')">
-أضف إلى السلة 🛒
 </button>
 
 </div>
 
-</article>
-
-
-<!-- PRODUCT 2 -->
-
-<article class="product" data-category="سراويل">
-
-<span class="badge">
-جديد
-</span>
-
-<button class="heart"
-onclick="toggleHeart(this)">
-♡
-</button>
-
-<div class="product-image">
-
-<svg viewBox="0 0 300 300">
-
-<path
-d="M105 45H195L215 260H165L150 135L135 260H85Z"
-fill="#111"/>
-
-<path
-d="M105 45H195V85H105Z"
-fill="#191919"/>
-
-<text
-x="185"
-y="115"
-fill="#08d7e9"
-font-size="30"
-font-weight="900">
-R
-</text>
-
-</svg>
-
-</div>
-
-<div class="product-info">
-
-<h3>
-سروال رياضي Rassan
-</h3>
-
-<p>
-سراويل
-</p>
-
-<strong class="price">
-199 د.م
-</strong>
-
-<button class="add"
-onclick="addToCart('سروال رياضي Rassan','199')">
-أضف إلى السلة 🛒
-</button>
-
-</div>
-
-</article>
-
-
-<!-- PRODUCT 3 -->
-
-<article class="product" data-category="تيشرتات">
-
-<span class="badge">
-جديد
-</span>
-
-<button class="heart"
-onclick="toggleHeart(this)">
-♡
-</button>
-
-<div class="product-image">
-
-<svg viewBox="0 0 300 300">
-
-<path
-d="M120 55L160 40H200L240 55L275 90L250 130L225 110V250H75V110L50 130L25 90L60 55Z"
-fill="#111"/>
-
-<path
-d="M160 40C165 70 195 70 200 40"
-fill="none"
-stroke="#333"
-stroke-width="6"/>
-
-<text
-x="150"
-y="160"
-text-anchor="middle"
-fill="#08d7e9"
-font-size="38"
-font-weight="900">
-R
-</text>
-
-</svg>
-
-</div>
-
-<div class="product-info">
-
-<h3>
-تيشرت أسود Rassan
-</h3>
-
-<p>
-تيشرتات
-</p>
-
-<strong class="price">
-129 د.م
-</strong>
-
-<button class="add"
-onclick="addToCart('تيشرت أسود Rassan','129')">
-أضف إلى السلة 🛒
-</button>
-
-</div>
-
-</article>
-
-
-<!-- PRODUCT 4 -->
-
-<article class="product" data-category="تيشرتات">
-
-<span class="badge">
-جديد
-</span>
-
-<button class="heart"
-onclick="toggleHeart(this)">
-♡
-</button>
-
-<div class="product-image">
-
-<svg viewBox="0 0 300 300">
-
-<path
-d="M120 55L160 40H200L240 55L275 90L250 130L225 110V250H75V110L50 130L25 90L60 55Z"
-fill="#f1f1f1"/>
-
-<path
-d="M160 40C165 70 195 70 200 40"
-fill="none"
-stroke="#999"
-stroke-width="6"/>
-
-<text
-x="150"
-y="160"
-text-anchor="middle"
-fill="#08d7e9"
-font-size="38"
-font-weight="900">
-R
-</text>
-
-</svg>
-
-</div>
-
-<div class="product-info">
-
-<h3>
-تيشرت أبيض Rassan
-</h3>
-
-<p>
-تيشرتات
-</p>
-
-<strong class="price">
-129 د.م
-</strong>
-
-<button class="add"
-onclick="addToCart('تيشرت أبيض Rassan','129')">
-أضف إلى السلة 🛒
-</button>
-
-</div>
-
-</article>
-
-
-<!-- PRODUCT 5 -->
-
-<article class="product" data-category="هوديات">
-
-<span class="badge">
-جديد
-</span>
-
-<button class="heart"
-onclick="toggleHeart(this)">
-♡
-</button>
-
-<div class="product-image">
-
-<svg viewBox="0 0 300 300">
-
-<path
-d="M120 60C125 30 140 15 160 15S195 30 200 60L240 90L212 132L190 112V250H110V112L88 132L60 90Z"
-fill="#111"/>
-
-<path
-d="M135 35C140 60 150 70 160 70S180 60 185 35"
-fill="none"
-stroke="#252525"
-stroke-width="12"/>
-
-<text
-x="150"
-y="165"
-text-anchor="middle"
-fill="#08d7e9"
-font-size="42"
-font-weight="900">
-R
-</text>
-
-</svg>
-
-</div>
-
-<div class="product-info">
-
-<h3>
-هودي Rassan كلاسيك
-</h3>
-
-<p>
-هوديات
-</p>
-
-<strong class="price">
-249 د.م
-</strong>
-
-<button class="add"
-onclick="addToCart('هودي Rassan كلاسيك','249')">
-أضف إلى السلة 🛒
-</button>
-
-</div>
-
-</article>
-
-
-</div>
+<div class="products" id="productsGrid"></div>
 
 </section>
 
-
-<!-- ================= FEATURES ================= -->
-
-<section class="container">
-
-<div class="features">
-
-<div class="feature">
-<div class="icon">♧</div>
-<h3>دعم العملاء</h3>
-<p>
-خدمة عملاء 7/7<br>
-نحن هنا لمساعدتك
-</p>
-</div>
-
-<div class="feature">
-<div class="icon">↻</div>
-<h3>إرجاع سهل</h3>
-<p>
-إرجاع واستبدال مجاني<br>
-خلال 7 أيام
-</p>
-</div>
-
-<div class="feature">
-<div class="icon">♢</div>
-<h3>جودة عالية</h3>
-<p>
-منتجات أصلية بجودة<br>
-مضمونة
-</p>
-</div>
-
-<div class="feature">
-<div class="icon">▱</div>
-<h3>توصيل سريع</h3>
-<p>
-توصيل لجميع المدن<br>
-خلال 24-48 ساعة
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= ABOUT ================= -->
-
+<!-- ABOUT -->
 <section class="container" id="about">
 
 <div class="about">
 
-<div class="about-logo">
+<div class="aboutVisual">
 
-<div class="logo-mark"></div>
-
-<h2 style="margin-top:10px">
-Rassan
-</h2>
+<div style="
+width:180px;
+height:180px;
+margin:auto;
+background:#09dff2;
+border-radius:45% 55% 48% 52%;
+box-shadow:0 0 45px #09dff288;
+"></div>
 
 </div>
 
 <div>
 
 <h2>
-من <span>نحن</span>
+عن <span>RASSAN</span>
 </h2>
 
 <p>
-Rassan هي علامة تجارية مغربية شغوفة بتقديم ملابس
-عصرية بجودة عالية وتصاميم فريدة تعكس شخصيتك وتميزك.
-هدفنا هو أن نوفر لك أفضل المنتجات بأفضل الأسعار.
+RASSAN علامة تجارية للملابس بهوية عصرية.
+الهدف ديالنا هو نقدموا قطع تجمع بين التصميم،
+الجودة والبساطة، ونخليو لكل شخص الأسلوب الخاص به.
 </p>
-
-<a href="#contact" class="primary">
-اقرأ المزيد
-</a>
 
 </div>
 
@@ -1371,31 +926,40 @@ Rassan هي علامة تجارية مغربية شغوفة بتقديم ملا�
 
 </section>
 
-
-<!-- ================= WHATSAPP ================= -->
-
+<!-- CONTACT -->
 <section class="container" id="contact">
 
-<div class="whatsapp">
+<div class="contact">
 
 <div>
 
 <b>
-للطلب أو الاستفسار تواصل معنا على واتساب
+للطلب أو الاستفسار تواصل معنا الآن
 </b>
 
 <small>
-+212 650-604804
+واتساب: +212 650-604804 · Instagram: @d.rassan
 </small>
 
 </div>
 
-<button class="wa-button"
-onclick="openWhatsApp()">
+<div class="row">
 
-تواصل عبر واتساب ◉
+<a
+class="btn wa"
+href="https://wa.me/212650604804"
+target="_blank">
+واتساب
+</a>
 
-</button>
+<a
+class="btn wa"
+href="https://www.instagram.com/d.rassan/"
+target="_blank">
+Instagram
+</a>
+
+</div>
 
 </div>
 
@@ -1403,259 +967,190 @@ onclick="openWhatsApp()">
 
 </main>
 
-
-<!-- ================= FOOTER ================= -->
-
+<!-- FOOTER -->
 <footer>
 
-<div class="container">
-
-<div class="footer-grid">
+<div class="container footerGrid">
 
 <div>
 
-<div class="logo" style="margin:0">
-
-<span>Rassan</span>
-
-<div class="logo-mark"></div>
-
-</div>
+<h3>RASSAN</h3>
 
 <p>
 أسلوبك. هويتك. تميزك.
 </p>
 
-<div class="social">
-
-<a href="#">◎</a>
-<a href="#">f</a>
-<a href="#">♪</a>
-
 </div>
-
-</div>
-
 
 <div>
 
-<h3>
-روابط سريعة
-</h3>
+<h3>روابط سريعة</h3>
 
-<a href="#home">
-الرئيسية
-</a>
-
-<a href="#products">
-المنتجات
-</a>
-
-<a href="#about">
-من نحن
-</a>
-
-<a href="#contact">
-تواصل معنا
-</a>
+<a href="#home">الرئيسية</a>
+<a href="#products">المنتجات</a>
+<a href="#about">من نحن</a>
 
 </div>
-
 
 <div>
 
-<h3>
-خدمات العملاء
-</h3>
+<h3>معلومات</h3>
 
-<a href="#">
-سياسة الشحن
-</a>
-
-<a href="#">
-سياسة الإرجاع
-</a>
-
-<a href="#">
-الأسئلة الشائعة
-</a>
+<a href="#">سياسة الخصوصية</a>
+<a href="#">شروط الاستخدام</a>
+<a href="#">سياسة الإرجاع</a>
 
 </div>
-
 
 <div>
 
-<h3>
-تواصل معنا
-</h3>
+<h3>تواصل معنا</h3>
 
-<p>
-+212 650-604804
-</p>
+<p>+212 650-604804</p>
 
-<p>
-المغرب
-</p>
+<a
+href="https://www.instagram.com/d.rassan/"
+target="_blank">
+@d.rassan
+</a>
 
-</div>
+<p>المغرب</p>
 
 </div>
 
-
-<div class="copy">
-
-© 2026 Rassan. جميع الحقوق محفوظة.
-
 </div>
 
+<div class="container copy">
+© 2026 RASSAN — جميع الحقوق محفوظة
 </div>
 
 </footer>
 
-
-<!-- ================= FLOATING WHATSAPP ================= -->
-
+<!-- WHATSAPP FLOAT -->
 <a
-class="float-wa"
+class="floatWa"
 href="https://wa.me/212650604804"
-target="_blank"
-rel="noopener">
-
+target="_blank">
 ◔
-
 </a>
 
 
-<!-- ================= CART ================= -->
-
+<!-- CART -->
 <div class="modal" id="cartModal">
 
-<div class="modal-box">
+<div class="box">
 
-<div class="modal-head">
-
-<h2>
-السلة
-</h2>
-
+<div class="modalHead">
+<h2>السلة</h2>
 <button class="close"
-onclick="closeModal('cartModal')">
-×
-</button>
-
+onclick="closeModal('cartModal')">×</button>
 </div>
 
 <div id="cartItems"></div>
 
-<button class="primary"
-style="width:100%;margin-top:12px"
+<button
+class="btn primary"
+style="width:100%;margin-top:10px"
 onclick="checkout()">
-
 إتمام الطلب عبر واتساب
-
 </button>
 
 </div>
-
 </div>
 
 
-<!-- ================= SEARCH ================= -->
-
+<!-- SEARCH -->
 <div class="modal" id="searchModal">
 
-<div class="modal-box">
+<div class="box">
 
-<div class="modal-head">
-
-<h2>
-البحث
-</h2>
-
+<div class="modalHead">
+<h2>البحث</h2>
 <button class="close"
-onclick="closeModal('searchModal')">
-×
-</button>
-
+onclick="closeModal('searchModal')">×</button>
 </div>
+
+<div class="field">
 
 <input
 id="searchInput"
 placeholder="ابحث عن منتج..."
 oninput="searchProducts()">
 
+</div>
+
 <div id="searchResults"></div>
 
 </div>
-
 </div>
 
 
-<!-- ================= ORDER ================= -->
-
+<!-- ORDER -->
 <div class="modal" id="orderModal">
 
-<div class="modal-box">
+<div class="box">
 
-<div class="modal-head">
-
-<h2>
-إرسال الطلب
-</h2>
-
+<div class="modalHead">
+<h2>إتمام الطلب</h2>
 <button class="close"
-onclick="closeModal('orderModal')">
-×
-</button>
-
+onclick="closeModal('orderModal')">×</button>
 </div>
 
 <form onsubmit="sendOrder(event)">
 
-<div class="two">
+<div class="grid2">
 
-<div>
+<div class="field">
 <label>الاسم</label>
 <input id="firstName" required>
 </div>
 
-<div>
+<div class="field">
 <label>النسب</label>
 <input id="lastName" required>
 </div>
 
 </div>
 
-<label>
-رقم الهاتف
-</label>
+<div class="field">
+<label>رقم الهاتف</label>
+<input id="phone" type="tel" required>
+</div>
 
-<input
-id="phone"
-type="tel"
-placeholder="06XXXXXXXX"
-required>
-
-<label>
-المنتج
-</label>
-
-<input
+<div class="field">
+<label>المنتجات</label>
+<textarea
 id="productName"
-readonly>
+rows="2"
+readonly></textarea>
+</div>
 
-<label>
-ملاحظات
-</label>
+<div class="field">
+<label>المدينة والعنوان</label>
+<textarea
+id="address"
+rows="3"
+required></textarea>
+</div>
 
+<div class="field">
+<label>ملاحظات</label>
 <textarea
 id="notes"
-rows="3"
-placeholder="المقاس، اللون، العنوان..."></textarea>
+rows="2"></textarea>
+</div>
+
+<label class="note">
+
+<input type="checkbox" id="locationConsent">
+
+أوافق اختيارياً على مشاركة موقعي مع المتجر للمساعدة في التوصيل.
+
+</label>
 
 <button
-class="primary"
-style="width:100%">
+class="btn primary"
+style="width:100%;margin-top:12px">
 
 تأكيد وإرسال عبر واتساب
 
@@ -1664,23 +1159,22 @@ style="width:100%">
 </form>
 
 </div>
-
 </div>
 
 
-<!-- ================= BALIZA ================= -->
-
+<!-- BALIZA -->
 <div class="modal" id="balizaModal">
 
-<div class="modal-box">
+<div class="box">
 
-<div class="modal-head">
+<div class="modalHead">
 
 <h2>
-Baliza
+Baliza — لوحة التحكم
 </h2>
 
-<button class="close"
+<button
+class="close"
 onclick="closeModal('balizaModal')">
 ×
 </button>
@@ -1688,90 +1182,379 @@ onclick="closeModal('balizaModal')">
 </div>
 
 
+<!-- LOGIN -->
+
 <div id="loginArea">
 
 <p class="note">
-
-لوحة الإدارة المحلية الخاصة بهذه النسخة.
-كلمة المرور التجريبية هي:
-
-<b>
-123456789
-</b>
-
-<br><br>
-
-ملاحظة: لأن الموقع يعمل بدون Backend،
-هذه الحماية ليست حماية حقيقية لموقع عام.
-
+هذه نسخة تجريبية بدون سيرفر.
+كلمة المرور المؤقتة هي:
+<b>123456789</b>
 </p>
+
+<div class="field">
+
+<label>
+كلمة المرور
+</label>
 
 <input
 id="adminPassword"
 type="password"
 inputmode="numeric"
-placeholder="كلمة المرور">
+maxlength="9"
+placeholder="أدخل كلمة المرور">
+
+</div>
 
 <button
-class="primary"
+class="btn primary"
 style="width:100%"
 onclick="loginAdmin()">
 
-تسجيل الدخول
+دخول
 
+</button>
+
+<p
+id="lockMsg"
+class="note"
+style="margin-top:9px">
+</p>
+
+</div>
+
+
+<!-- ADMIN AREA -->
+
+<div
+id="adminArea"
+style="display:none">
+
+<div class="stats">
+
+<div class="stat">
+<b id="statProducts">0</b>
+منتج
+</div>
+
+<div class="stat">
+<b id="statOrders">0</b>
+طلب
+</div>
+
+<div class="stat">
+<b id="statLogs">0</b>
+سجل
+</div>
+
+<div class="stat">
+<b>HTTPS</b>
+GitHub Pages
+</div>
+
+</div>
+
+
+<div class="tabs">
+
+<button
+class="tab active"
+onclick="adminTab('products',this)">
+المنتجات
+</button>
+
+<button
+class="tab"
+onclick="adminTab('orders',this)">
+الطلبات
+</button>
+
+<button
+class="tab"
+onclick="adminTab('logs',this)">
+السجل
 </button>
 
 </div>
 
 
-<div id="adminArea" style="display:none">
+<!-- PRODUCTS ADMIN -->
+
+<div id="adminProducts">
+
+<div class="grid2">
+
+<div>
+
+<h3>
+إضافة منتج
+</h3>
+
+<div class="field">
+
+<label>
+اسم المنتج
+</label>
+
+<input id="newName">
+
+</div>
+
+<div class="grid2">
+
+<div class="field">
+
+<label>
+السعر DH
+</label>
+
+<input
+id="newPrice"
+type="number"
+min="0">
+
+</div>
+
+<div class="field">
+
+<label>
+الفئة
+</label>
+
+<select id="newCategory">
+
+<option>تيشرتات</option>
+<option>هوديات</option>
+<option>سراويل</option>
+<option>إكسسوارات</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label>
+المواصفات والوصف
+</label>
+
+<textarea
+id="newDesc"
+rows="4">
+</textarea>
+
+</div>
+
+
+<div class="field">
+
+<label>
+صورة المنتج من الألبوم
+</label>
+
+<input
+id="newImage"
+type="file"
+accept="image/*">
+
+</div>
+
+
+<div class="row">
 
 <button
-class="primary"
-onclick="showOrders()">
+class="btn primary"
+type="button"
+onclick="addProduct()">
 
-تحديث الطلبات
++ إضافة
 
 </button>
 
-<h3 style="margin-top:20px">
-الطلبات
-</h3>
+<button
+class="smallBtn ok"
+type="button"
+onclick="exportData()">
 
-<div id="ordersList"></div>
+نسخة احتياطية
+
+</button>
+
+<label class="smallBtn ok">
+
+استيراد
+
+<input
+hidden
+type="file"
+accept=".json"
+onchange="importData(event)">
+
+</label>
+
+</div>
 
 <p class="note">
 
-الطلبات في هذه النسخة محفوظة داخل المتصفح
-باستخدام localStorage.
+المنتجات والطلبات كتتخزن محلياً فالمتصفح
+في هاد النسخة التجريبية بلا سيرفر.
 
 </p>
 
 </div>
 
+
+<div>
+
+<h3>
+إدارة المنتجات
+</h3>
+
+<div id="manageProducts"></div>
+
+</div>
+
 </div>
 
 </div>
 
 
-<!-- ================= TOAST ================= -->
+<!-- ORDERS -->
 
-<div class="toast" id="toast"></div>
+<div
+id="adminOrders"
+style="display:none">
+
+<div id="ordersList"></div>
+
+</div>
+
+
+<!-- LOGS -->
+
+<div
+id="adminLogs"
+style="display:none">
+
+<div id="logsList"></div>
+
+<button
+class="smallBtn danger"
+onclick="clearLogs()">
+
+مسح السجل
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div
+class="toast"
+id="toast">
+</div>
 
 
 <script>
 
-/* ================= DATA ================= */
+const WA="212650604804";
 
-const WHATSAPP_NUMBER = "212650604804";
+/*
+  كلمة المرور التجريبية فقط.
+  منين نديرو السيرفر الحقيقي غادي تتبدل
+  بنظام Authentication حقيقي.
+*/
+const ADMIN_PASSWORD="123456789";
 
-let cart =
+let products=
 JSON.parse(
-localStorage.getItem("rassan_cart") || "[]"
+localStorage.getItem("rassan_products")||"null"
+);
+
+let cart=
+JSON.parse(
+localStorage.getItem("rassan_cart")||"[]"
+);
+
+let filter="الكل";
+
+let attempts=
+Number(
+localStorage.getItem("baliza_attempts")||0
+);
+
+let lockedUntil=
+Number(
+localStorage.getItem("baliza_lockedUntil")||0
 );
 
 
-/* ================= CART ================= */
+/* ID */
+
+function id(){
+
+return Date.now().toString(36)+
+Math.random().toString(36).slice(2,8);
+
+}
+
+
+/* HTML SAFE */
+
+function esc(x){
+
+return String(x??"")
+.replace(/[&<>"']/g,m=>({
+
+"&":"&amp;",
+"<":"&lt;",
+">":"&gt;",
+'"':"&quot;",
+"'":"&#039;"
+
+}[m]));
+
+}
+
+
+/* TOAST */
+
+function toast(t){
+
+let e=document.getElementById("toast");
+
+e.textContent=t;
+
+e.classList.add("show");
+
+setTimeout(
+()=>e.classList.remove("show"),
+2200
+);
+
+}
+
+
+/* SAVE */
+
+function saveProducts(){
+
+localStorage.setItem(
+"rassan_products",
+JSON.stringify(products)
+);
+
+}
 
 function saveCart(){
 
@@ -1780,31 +1563,225 @@ localStorage.setItem(
 JSON.stringify(cart)
 );
 
-updateCartCount();
+document.getElementById(
+"cartCount"
+).textContent=cart.length;
 
 }
 
 
-function updateCartCount(){
+/* LOG */
 
-document.getElementById("cartCount").textContent =
-cart.length;
+function log(type,detail){
+
+let a=
+JSON.parse(
+localStorage.getItem("rassan_logs")||"[]"
+);
+
+a.unshift({
+
+time:new Date().toLocaleString("ar-MA"),
+type,
+detail
+
+});
+
+localStorage.setItem(
+"rassan_logs",
+JSON.stringify(a.slice(0,500))
+);
 
 }
 
 
-function addToCart(name,price){
+/* DEFAULT PRODUCTS */
+
+if(!products){
+
+products=[
+
+{
+ id:id(),
+ name:"RASSAN تيشرت أسود",
+ price:199,
+ category:"تيشرتات",
+ desc:"تيشرت أسود بتصميم RASSAN.",
+ image:"",
+ sold:false
+},
+
+{
+ id:id(),
+ name:"RASSAN هودي",
+ price:399,
+ category:"هوديات",
+ desc:"هودي RASSAN بتصميم عصري.",
+ image:"",
+ sold:false
+},
+
+{
+ id:id(),
+ name:"RASSAN كاب",
+ price:149,
+ category:"إكسسوارات",
+ desc:"كاب RASSAN بالهوية الرسمية.",
+ image:"",
+ sold:false
+},
+
+{
+ id:id(),
+ name:"RASSAN سروال",
+ price:299,
+ category:"سراويل",
+ desc:"سروال RASSAN مريح وعصري.",
+ image:"",
+ sold:false
+}
+
+];
+
+saveProducts();
+
+}
+
+
+/* RENDER PRODUCTS */
+
+function renderProducts(){
+
+let a=products.filter(
+p=>filter==="الكل"||p.category===filter
+);
+
+let g=document.getElementById(
+"productsGrid"
+);
+
+if(!a.length){
+
+g.innerHTML=
+"<p class='note'>لا توجد منتجات.</p>";
+
+return;
+
+}
+
+g.innerHTML=a.map(p=>`
+
+<article class="card">
+
+<span class="badge ${p.sold?"sold":""}">
+${p.sold?"انتهى":"متوفر"}
+</span>
+
+<button
+class="wish"
+onclick="
+this.classList.toggle('on');
+this.textContent=
+this.classList.contains('on')?'♥':'♡'
+">
+♡
+</button>
+
+<div class="productImg">
+
+${
+p.image
+?
+`<img
+src="${p.image}"
+alt="${esc(p.name)}">`
+:
+`
+<div style="
+font-size:45px;
+font-weight:900;
+color:#09dff2;
+text-shadow:0 0 25px #09dff2;
+">
+RASSAN
+</div>
+`
+}
+
+</div>
+
+<div class="info">
+
+<h3>
+${esc(p.name)}
+</h3>
+
+<p>
+${esc(p.desc)}
+</p>
+
+<strong class="price">
+${p.price} DH
+</strong>
+
+<button
+class="add"
+${p.sold?"disabled":""}
+onclick="addToCart('${p.id}')">
+
+${p.sold?
+"انتهى المنتج":
+"أضف إلى السلة 🛒"}
+
+</button>
+
+</div>
+
+</article>
+
+`).join("");
+
+}
+
+
+/* FILTER */
+
+function filterProducts(x,b){
+
+filter=x;
+
+document
+.querySelectorAll(".cat")
+.forEach(e=>e.classList.remove("active"));
+
+b.classList.add("active");
+
+renderProducts();
+
+}
+
+
+/* CART */
+
+function addToCart(pid){
+
+let p=products.find(
+x=>x.id===pid
+);
+
+if(!p||p.sold)return;
 
 cart.push({
-name:name,
-price:price
+
+id:p.id,
+name:p.name,
+price:p.price
+
 });
 
 saveCart();
 
-showToast(
-"تمت إضافة المنتج إلى السلة"
-);
+toast("تمت إضافة المنتج للسلة");
 
 }
 
@@ -1822,42 +1799,33 @@ document
 
 function renderCart(){
 
-const box =
+let e=
 document.getElementById("cartItems");
 
 if(!cart.length){
 
-box.innerHTML =
+e.innerHTML=
 "<p class='note'>السلة فارغة.</p>";
 
 return;
 
 }
 
-box.innerHTML =
-cart.map(
-(item,index)=>`
+e.innerHTML=cart.map(
+(x,i)=>`
 
 <div class="order">
 
-<strong>
-${item.name}
-</strong>
+<b>${esc(x.name)}</b>
 
 <br>
 
-${item.price} د.م
+${x.price} DH
 
 <button
-style="
-float:left;
-background:none;
-border:1px solid #633;
-color:#ff8888;
-padding:4px 8px;
-border-radius:6px;
-"
-onclick="removeCart(${index})">
+class="smallBtn danger"
+style="float:left"
+onclick="removeCart(${i})">
 
 حذف
 
@@ -1871,9 +1839,9 @@ onclick="removeCart(${index})">
 }
 
 
-function removeCart(index){
+function removeCart(i){
 
-cart.splice(index,1);
+cart.splice(i,1);
 
 saveCart();
 
@@ -1886,14 +1854,18 @@ function checkout(){
 
 if(!cart.length){
 
-showToast("السلة فارغة");
+toast("السلة فارغة");
 
 return;
 
 }
 
-document.getElementById("productName").value =
-cart.map(x=>x.name).join("، ");
+document.getElementById(
+"productName"
+).value=
+cart.map(
+x=>x.name+" — "+x.price+" DH"
+).join("، ");
 
 closeModal("cartModal");
 
@@ -1904,165 +1876,143 @@ document
 }
 
 
-/* ================= ORDER ================= */
+/* ORDER */
 
-function sendOrder(event){
+function sendOrder(e){
 
-event.preventDefault();
+e.preventDefault();
 
-const order = {
+let o={
+
+id:id(),
 
 name:
-document.getElementById("firstName").value
-+
-" "
-+
+document.getElementById("firstName").value+
+" "+
 document.getElementById("lastName").value,
 
 phone:
 document.getElementById("phone").value,
 
-product:
+products:
 document.getElementById("productName").value,
+
+address:
+document.getElementById("address").value,
 
 notes:
 document.getElementById("notes").value,
 
-date:
-new Date().toLocaleString("ar-MA")
+time:
+new Date().toLocaleString("ar-MA"),
+
+location:null
 
 };
 
-
-let orders =
+let orders=
 JSON.parse(
-localStorage.getItem("rassan_orders") || "[]"
+localStorage.getItem("rassan_orders")||"[]"
 );
 
-
-orders.unshift(order);
-
+orders.unshift(o);
 
 localStorage.setItem(
 "rassan_orders",
 JSON.stringify(orders)
 );
 
-
-const message =
-
-`طلب جديد من Rassan
-
-الاسم: ${order.name}
-
-الهاتف: ${order.phone}
-
-المنتج: ${order.product}
-
-ملاحظات: ${order.notes}`;
-
-
-window.open(
-
-"https://wa.me/"
-+
-WHATSAPP_NUMBER
-+
-"?text="
-+
-encodeURIComponent(message),
-
-"_blank"
-
+log(
+"طلب جديد",
+o.name+" — "+o.phone
 );
 
+
+function finish(loc){
+
+o.location=loc;
+
+localStorage.setItem(
+"rassan_orders",
+JSON.stringify(orders)
+);
+
+let msg=
+`طلب RASSAN
+
+الاسم: ${o.name}
+
+الهاتف: ${o.phone}
+
+المنتجات: ${o.products}
+
+العنوان: ${o.address}
+
+ملاحظات: ${o.notes}`;
+
+if(loc){
+
+msg+=
+`\nالموقع بموافقة الزبون:
+https://www.google.com/maps?q=${loc.lat},${loc.lng}`;
+
+}
+
+window.open(
+"https://wa.me/"+WA+
+"?text="+encodeURIComponent(msg),
+"_blank"
+);
 
 closeModal("orderModal");
 
-showToast(
-"تم فتح واتساب لإرسال الطلب"
-);
+cart=[];
+
+saveCart();
+
+toast("تم إرسال الطلب لواتساب");
 
 }
 
-
-/* ================= WHATSAPP ================= */
-
-function openWhatsApp(){
-
-const message =
-"سلام، بغيت نستفسر على منتجات Rassan.";
-
-window.open(
-
-"https://wa.me/"
-+
-WHATSAPP_NUMBER
-+
-"?text="
-+
-encodeURIComponent(message),
-
-"_blank"
-
-);
-
-}
-
-
-/* ================= FILTER ================= */
-
-function filterProducts(category,button){
-
-document
-.querySelectorAll(".category")
-.forEach(
-x=>x.classList.remove("active")
-);
-
-button.classList.add("active");
-
-
-document
-.querySelectorAll(".product")
-.forEach(product=>{
 
 if(
-category === "all"
-||
-product.dataset.category === category
+document.getElementById(
+"locationConsent"
+).checked
+&&
+navigator.geolocation
 ){
 
-product.style.display = "block";
+navigator.geolocation.getCurrentPosition(
+
+p=>finish({
+
+lat:p.coords.latitude,
+lng:p.coords.longitude,
+accuracy:p.coords.accuracy
+
+}),
+
+()=>finish(null),
+
+{
+enableHighAccuracy:true,
+timeout:8000,
+maximumAge:0
+}
+
+);
 
 }else{
 
-product.style.display = "none";
+finish(null);
 
 }
-
-});
-
-}
-
-
-/* ================= HEART ================= */
-
-function toggleHeart(button){
-
-button.classList.toggle("active");
-
-button.textContent =
-button.classList.contains("active")
-?
-"♥"
-:
-"♡";
 
 }
 
 
-/* ================= SEARCH ================= */
+/* SEARCH */
 
 function openSearch(){
 
@@ -2081,176 +2031,41 @@ searchProducts();
 
 function searchProducts(){
 
-const query =
+let q=
 document
 .getElementById("searchInput")
 .value
 .toLowerCase();
 
+document.getElementById(
+"searchResults"
+).innerHTML=
 
-const products =
-document.querySelectorAll(".product");
-
-
-let html = "";
-
-
-products.forEach(product=>{
-
-const name =
-product
-.querySelector("h3")
-.textContent;
-
-
-const price =
-product
-.querySelector(".price")
-.textContent;
-
-
-if(
-name
+products
+.filter(
+p=>
+(p.name+" "+p.desc)
 .toLowerCase()
-.includes(query)
-){
-
-html += `
-
+.includes(q)
+)
+.map(
+p=>
+`
 <div class="order">
-
-<strong>
-${name}
-</strong>
-
-<br>
-
-${price}
-
+<b>${esc(p.name)}</b>
+—
+${p.price} DH
 </div>
-
-`;
-
-}
-
-});
-
-
-document
-.getElementById("searchResults")
-.innerHTML =
-html ||
+`
+)
+.join("")
+||
 "<p class='note'>لا توجد نتائج.</p>";
 
 }
 
 
-/* ================= BALIZA ================= */
-
-function openBaliza(){
-
-document
-.getElementById("balizaModal")
-.classList.add("show");
-
-}
-
-
-function loginAdmin(){
-
-const password =
-document
-.getElementById("adminPassword")
-.value;
-
-
-if(password === "123456789"){
-
-document
-.getElementById("loginArea")
-.style.display =
-"none";
-
-
-document
-.getElementById("adminArea")
-.style.display =
-"block";
-
-
-showOrders();
-
-
-}else{
-
-showToast(
-"كلمة المرور غير صحيحة"
-);
-
-}
-
-}
-
-
-function showOrders(){
-
-const orders =
-JSON.parse(
-localStorage.getItem("rassan_orders") || "[]"
-);
-
-
-const box =
-document.getElementById("ordersList");
-
-
-if(!orders.length){
-
-box.innerHTML =
-"<p class='note'>لا توجد طلبات.</p>";
-
-return;
-
-}
-
-
-box.innerHTML =
-orders.map(order=>`
-
-<div class="order">
-
-<strong>
-${order.name}
-</strong>
-
-<br>
-
-الهاتف:
-${order.phone}
-
-<br>
-
-المنتج:
-${order.product}
-
-<br>
-
-${order.notes || ""}
-
-<br>
-
-<span class="note">
-${order.date}
-</span>
-
-</div>
-
-`).join("");
-
-}
-
-
-/* ================= MODAL ================= */
+/* MODALS */
 
 function closeModal(id){
 
@@ -2260,52 +2075,659 @@ document
 
 }
 
-
 document
 .querySelectorAll(".modal")
-.forEach(modal=>{
+.forEach(m=>{
 
-modal.addEventListener(
+m.addEventListener(
 "click",
-function(event){
+e=>{
 
-if(event.target === modal){
+if(e.target===m)
+m.classList.remove("show");
 
-modal.classList.remove("show");
-
-}
-
-}
-);
+});
 
 });
 
 
-/* ================= TOAST ================= */
+/* BALIZA */
 
-function showToast(message){
+function openBaliza(){
 
-const toast =
-document.getElementById("toast");
+document
+.getElementById("balizaModal")
+.classList.add("show");
 
-toast.textContent =
-message;
-
-toast.classList.add("show");
-
-setTimeout(
-()=>{
-toast.classList.remove("show");
-},
-2200
-);
+updateLockMsg();
 
 }
 
 
-/* ================= INIT ================= */
+function updateLockMsg(){
 
-updateCartCount();
+let e=
+document.getElementById("lockMsg");
+
+let inp=
+document.getElementById("adminPassword");
+
+if(Date.now()<lockedUntil){
+
+e.textContent=
+"تم قفل المحاولات لمدة 24 ساعة.";
+
+inp.disabled=true;
+
+}else{
+
+e.textContent=
+"المحاولات المتبقية: "+
+(3-attempts)+"/3";
+
+inp.disabled=false;
+
+}
+
+}
+
+
+/* LOGIN */
+
+function loginAdmin(){
+
+if(Date.now()<lockedUntil)return;
+
+let p=
+document.getElementById(
+"adminPassword"
+).value;
+
+if(p===ADMIN_PASSWORD){
+
+attempts=0;
+
+localStorage.setItem(
+"baliza_attempts",
+0
+);
+
+document.getElementById(
+"loginArea"
+).style.display="none";
+
+document.getElementById(
+"adminArea"
+).style.display="block";
+
+log(
+"Baliza",
+"دخول ناجح"
+);
+
+renderAdmin();
+
+return;
+
+}
+
+attempts++;
+
+if(attempts>=3){
+
+lockedUntil=
+Date.now()+86400000;
+
+attempts=0;
+
+localStorage.setItem(
+"baliza_lockedUntil",
+lockedUntil
+);
+
+toast(
+"3 محاولات خاطئة — تم القفل 24 ساعة"
+);
+
+}
+
+localStorage.setItem(
+"baliza_attempts",
+attempts
+);
+
+updateLockMsg();
+
+}
+
+
+/* ADMIN TABS */
+
+function adminTab(t,b){
+
+document
+.querySelectorAll(".tab")
+.forEach(
+x=>x.classList.remove("active")
+);
+
+b.classList.add("active");
+
+document.getElementById(
+"adminProducts"
+).style.display=
+t==="products"?"block":"none";
+
+document.getElementById(
+"adminOrders"
+).style.display=
+t==="orders"?"block":"none";
+
+document.getElementById(
+"adminLogs"
+).style.display=
+t==="logs"?"block":"none";
+
+if(t==="orders")
+renderOrders();
+
+if(t==="logs")
+renderLogs();
+
+}
+
+
+/* ADMIN */
+
+function renderAdmin(){
+
+document.getElementById(
+"statProducts"
+).textContent=
+products.length;
+
+document.getElementById(
+"statOrders"
+).textContent=
+JSON.parse(
+localStorage.getItem("rassan_orders")||"[]"
+).length;
+
+document.getElementById(
+"statLogs"
+).textContent=
+JSON.parse(
+localStorage.getItem("rassan_logs")||"[]"
+).length;
+
+renderManage();
+
+}
+
+
+/* MANAGE PRODUCTS */
+
+function renderManage(){
+
+document.getElementById(
+"manageProducts"
+).innerHTML=
+
+products.map(
+p=>
+`
+
+<div class="manage">
+
+<strong>
+${esc(p.name)}
+</strong>
+
+<br>
+
+<span class="note">
+
+${p.price} DH
+—
+${esc(p.category)}
+—
+${p.sold?"انتهى":"متوفر"}
+
+</span>
+
+<div
+class="row"
+style="margin-top:7px">
+
+<button
+class="smallBtn ${p.sold?"ok":"danger"}"
+onclick="toggleSold('${p.id}')">
+
+${p.sold?
+"إرجاع للتوفر":
+"تحديد انتهى"}
+
+</button>
+
+<button
+class="smallBtn danger"
+onclick="deleteProduct('${p.id}')">
+
+حذف
+
+</button>
+
+</div>
+
+</div>
+
+`
+).join("")
+||
+"<p class='note'>لا توجد منتجات.</p>";
+
+}
+
+
+/* ADD PRODUCT */
+
+function addProduct(){
+
+let n=
+document.getElementById(
+"newName"
+).value.trim();
+
+let pr=
+document.getElementById(
+"newPrice"
+).value;
+
+let c=
+document.getElementById(
+"newCategory"
+).value;
+
+let d=
+document.getElementById(
+"newDesc"
+).value.trim();
+
+let f=
+document.getElementById(
+"newImage"
+).files[0];
+
+if(!n||pr===""){
+
+toast("دخل اسم المنتج والسعر");
+
+return;
+
+}
+
+
+function done(image){
+
+products.unshift({
+
+id:id(),
+name:n,
+price:Number(pr),
+category:c,
+desc:d,
+image:image||"",
+sold:false
+
+});
+
+saveProducts();
+
+log(
+"إضافة منتج",
+n
+);
+
+renderProducts();
+
+renderAdmin();
+
+document.getElementById(
+"newName"
+).value="";
+
+document.getElementById(
+"newPrice"
+).value="";
+
+document.getElementById(
+"newDesc"
+).value="";
+
+document.getElementById(
+"newImage"
+).value="";
+
+toast("تمت إضافة المنتج");
+
+}
+
+
+if(f){
+
+if(f.size>3*1024*1024){
+
+toast(
+"الصورة خاصها تكون أقل من 3MB"
+);
+
+return;
+
+}
+
+let r=new FileReader();
+
+r.onload=()=>done(r.result);
+
+r.readAsDataURL(f);
+
+}else{
+
+done("");
+
+}
+
+}
+
+
+/* SOLD */
+
+function toggleSold(pid){
+
+let p=
+products.find(
+x=>x.id===pid
+);
+
+p.sold=!p.sold;
+
+saveProducts();
+
+log(
+"تغيير حالة",
+p.name
+);
+
+renderProducts();
+
+renderAdmin();
+
+}
+
+
+/* DELETE */
+
+function deleteProduct(pid){
+
+let p=
+products.find(
+x=>x.id===pid
+);
+
+if(
+!confirm(
+"حذف "+p.name+"؟"
+)
+)return;
+
+products=
+products.filter(
+x=>x.id!==pid
+);
+
+saveProducts();
+
+log(
+"حذف منتج",
+p.name
+);
+
+renderProducts();
+
+renderAdmin();
+
+}
+
+
+/* ORDERS */
+
+function renderOrders(){
+
+let a=
+JSON.parse(
+localStorage.getItem("rassan_orders")||"[]"
+);
+
+document.getElementById(
+"ordersList"
+).innerHTML=
+
+a.map(
+o=>
+`
+
+<div class="order">
+
+<strong>
+${esc(o.name)}
+</strong>
+
+<br>
+
+الهاتف:
+${esc(o.phone)}
+
+<br>
+
+المنتجات:
+${esc(o.products)}
+
+<br>
+
+العنوان:
+${esc(o.address)}
+
+<br>
+
+الوقت:
+${esc(o.time)}
+
+<br>
+
+${
+o.location
+?
+`
+الموقع بموافقة الزبون:
+${Number(o.location.lat).toFixed(5)},
+${Number(o.location.lng).toFixed(5)}
+`
+:
+"لم تتم مشاركة الموقع."
+}
+
+</div>
+
+`
+)
+.join("")
+||
+"<p class='note'>لا توجد طلبات.</p>";
+
+}
+
+
+/* LOGS */
+
+function renderLogs(){
+
+let a=
+JSON.parse(
+localStorage.getItem("rassan_logs")||"[]"
+);
+
+document.getElementById(
+"logsList"
+).innerHTML=
+
+a.map(
+x=>
+`
+
+<div class="log">
+
+<b>
+${esc(x.type)}
+</b>
+
+<br>
+
+${esc(x.detail)}
+
+<br>
+
+<span class="note">
+${esc(x.time)}
+</span>
+
+</div>
+
+`
+)
+.join("")
+||
+"<p class='note'>السجل فارغ.</p>";
+
+}
+
+
+/* CLEAR LOGS */
+
+function clearLogs(){
+
+if(
+confirm("مسح السجل؟")
+){
+
+localStorage.removeItem(
+"rassan_logs"
+);
+
+renderAdmin();
+
+renderLogs();
+
+}
+
+}
+
+
+/* EXPORT */
+
+function exportData(){
+
+let d={
+
+products,
+
+orders:
+JSON.parse(
+localStorage.getItem("rassan_orders")||"[]"
+),
+
+logs:
+JSON.parse(
+localStorage.getItem("rassan_logs")||"[]"
+)
+
+};
+
+let b=new Blob(
+[
+JSON.stringify(d,null,2)
+],
+{
+type:"application/json"
+}
+);
+
+let a=
+document.createElement("a");
+
+a.href=
+URL.createObjectURL(b);
+
+a.download=
+"rassan-backup.json";
+
+a.click();
+
+}
+
+
+/* IMPORT */
+
+function importData(e){
+
+let f=e.target.files[0];
+
+if(!f)return;
+
+let r=new FileReader();
+
+r.onload=()=>{
+
+try{
+
+let d=
+JSON.parse(r.result);
+
+if(!Array.isArray(d.products))
+throw 0;
+
+products=d.products;
+
+saveProducts();
+
+renderProducts();
+
+renderAdmin();
+
+toast("تم الاستيراد");
+
+}catch{
+
+toast("ملف غير صالح");
+
+}
+
+};
+
+r.readAsText(f);
+
+}
+
+
+/* START */
+
+saveCart();
+
+renderProducts();
+
+setInterval(
+updateLockMsg,
+60000
+);
 
 </script>
 
